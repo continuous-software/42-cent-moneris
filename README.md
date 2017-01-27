@@ -4,16 +4,17 @@
 
 ## Installation ##
 
-    $ npm install -s node-moneris
+    $ npm install -s 42-cent-moneris
 
 ## Usage
 
 ```javascript
 var moneris = require('node-moneris');
 var client = new MonerisMerchant({
-    MERCHANT_ID: '<PLACEHOLDER>',
-    USER_ID: '<PLACEHOLDER>',
-    SSL_PIN: '<PLACEHOLDER>'
+    store_id: '<PLACEHOLDER>',
+    api_token: '<PLACEHOLDER>',
+    country: '<PLACEHOLDER>',
+    testMode: '<PLACEHOLDER>'
 });
 ```
 
@@ -25,10 +26,16 @@ It implements the [BaseGateway](https://github.com/continuous-software/42-cent-b
 
 ## Test Values
 
-string processing_country_code = "CA";
-mpgReq.setTestMode(true);
-String store_id = "store5";
-String api_token = "yesguy";
+
+```javascript
+var moneris = require('node-moneris');
+var client = new MonerisMerchant({
+    store_id: 'store5',
+    api_token: 'yesguy',
+    country: 'CA',
+    testMode: true
+});
+```
 
 MasterCard
 5454545454545454
