@@ -1,6 +1,6 @@
 module.exports = {
-    "store_id": "store3",
-    "api_token": "yesguy",
-    "country": "CA",
+    "STORE_ID": "store3",
+    "API_TOKEN": "yesguy",
+    "COUNTRY": "CA",
     "testMode": true
 };
