@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/continuous-software/node-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/node-moneris)
+[![Build Status](https://travis-ci.org/continuous-software/42-cent-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-moneris)
 
 ![node-moneris](https://upload.wikimedia.org/wikipedia/en/6/6b/Moneris_Logo.svg)
 
