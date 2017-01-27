@@ -29,13 +29,13 @@ describe('Canada voidTransaction', function () {
       .then(function (transaction) {
         var transId = transaction.transactionId;
         var options = {};
-        options.order_id = transaction.result.ReceiptId[0];
+        options.order_id = transaction._original.ReceiptId[0];
         return service.voidTransaction(transId, options);
       })
       .then(function (response) {
         assert(response._original, '_original should be defined');
-        assert.equal(response._original.order_id, response.result.ReceiptId);
-        assert.equal(response.result.Message[0].slice(0,8), 'APPROVED');
+        assert.notEqual(response._original.ReceiptId, null);
+        assert.equal(response._original.Message[0].slice(0,8), 'APPROVED');
         done();
       }).catch(function (err) {
         done(err);
@@ -50,12 +50,10 @@ describe('Canada voidTransaction', function () {
 
     service.voidTransaction(transId, options)
       .then(function (response) {
-        assert.equal(response.result.Complete, 'false');
-        done();
-      }, function (err) {
-        assert(err instanceof GatewayError);
-        assert(err.message.indexOf('Transaction not found') !== -1);
-        assert(err._original, '_original should be defined');
+        throw new Error('Was not rejected.');
+      }).catch(function (err) {
+        assert.ok(err instanceof GatewayError, 'expected instance of GatewayError');
+        assert.ok(err._original, '_original should be defined');
         done();
       })
   });

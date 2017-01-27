@@ -29,18 +29,17 @@ describe('Canada refundTransaction', function () {
       .then(function (transaction) {
         var transId = transaction.transactionId;
         var options = {};
-        options.order_id = transaction.result.ReceiptId[0];
-        options.amount = transaction._original.amount;
+        options.order_id = transaction._original.ReceiptId;
+        options.amount = transaction._original.TransAmount;
         return service.refundTransaction(transId, options);
       })
-      .then(function (response) {
-        assert(response._original, '_original should be defined');
-        assert.equal(response._original.order_id, response.result.ReceiptId);
-        assert.equal(response.result.Message[0].slice(0,8), 'APPROVED');
-        done();
+      .then(function (transaction) {
+        assert.equal(transaction._original.Message[0].slice(0,8), 'APPROVED');
+        assert.ok(result._original, '_original should be defined');
+        assert.notEqual(transaction._original.ReceiptId, null);
       }).catch(function (err) {
-      done(err);
-    });
+        done();
+      });
 
   });
 
@@ -50,17 +49,18 @@ describe('Canada refundTransaction', function () {
     options.order_id = '777';
     options.amount = '8.99';
 
-    service.voidTransaction(transId, options)
-      .then(function (response) {
-        assert.equal(response.result.Complete, 'false');
-        done();
-      }, function (err) {
-        assert(err instanceof GatewayError);
-        assert(err.message.indexOf('Transaction not found') !== -1);
-        assert(err._original, '_original should be defined');
-        done();
-      })
+
+    return service.refundTransaction(transId, options)
+      .then(function () {
+      throw new Error('Was not rejected.');
+    }).catch(function (err) {
+      assert.ok(err instanceof GatewayError, 'expected instance of GatewayError');
+      assert.ok(err._original, '_original should be defined');
+      done();
+    });
   });
+
+
 
 });
 
