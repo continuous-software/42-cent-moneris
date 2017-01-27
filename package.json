@@ -1,0 +1,42 @@
+{
+  "name": "42-cent-moneris",
+  "version": "0.0.1",
+  "description": "42-cent adaptor for moneris payment gateway",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "42-cent-base": "^1.0.0",
+    "42-cent-util": "^1.0.0",
+    "assign": "^0.1.7",
+    "bluebird": "^2.10.2",
+    "object-assign": "^4.0.1",
+    "q": "^1.4.1",
+    "request": "^2.73.0",
+    "superagent": "^1.8.5",
+    "underscore": "^1.6.0",
+    "xml2js": "^0.4.6"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "casual": "^1.4.7",
+    "42-cent-model": "^2.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/continuous-software/node-moneris.git"
+  },
+  "scripts": {
+    "test": "NODE_ENV='test' mocha -R spec -t 5000"
+  },
+  "keywords": [
+    "42-cent",
+    "payment",
+    "gateway",
+    "eselectplus",
+    "moneris"
+  ],
+  "author": "Max Pringle",
+  "license": "MIT"
+}
