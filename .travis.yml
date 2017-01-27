@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+- 6
+before_script:
+- npm install
+script:
+- npm test
+notifications:
+  slack:
+    secure: kdBgvp7WdKiO+ZtsFaaQIThc6s5fQmV807E+WAif3rtdsEvvDpiLy/izODMd/J1whewEJPYFimrmId6rkL5p5IgVzlA13pxLcPrKhCg8sks2IxuFUloYPaxK8TX52v2aU+wSi5Es97BJOWhd4QkAXjtCHVEwhVFXdibWZnwg+bU=
