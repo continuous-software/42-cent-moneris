@@ -12,6 +12,7 @@
     "assign": "^0.1.7",
     "bluebird": "^2.10.2",
     "object-assign": "^4.0.1",
+    "q": "^1.4.1",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "superagent": "^1.8.5",
