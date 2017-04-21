@@ -1,6 +1,6 @@
 {
   "name": "42-cent-moneris",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "42-cent adaptor for moneris payment gateway",
   "main": "index.js",
   "directories": {
