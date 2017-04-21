@@ -29,7 +29,10 @@ describe('Canada refundTransaction', function () {
       .then(function (transaction) {
         var transId = transaction.transactionId;
         var options = {};
-        options.order_id = transaction._original.ReceiptId;
+
+        options.response = {
+          ReceiptId: [transaction._original.ReceiptId[0]]
+        };
         options.amount = transaction._original.TransAmount;
         return service.refundTransaction(transId, options);
       })
@@ -46,7 +49,9 @@ describe('Canada refundTransaction', function () {
   it('should reject the promise when the gateway returns error for refund', function (done) {
     var transId = '666';
     var options = {};
-    options.order_id = '777';
+    options.response = {
+      ReceiptId: ['777']
+    };
     options.amount = '8.99';
 
 

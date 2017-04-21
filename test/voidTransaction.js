@@ -27,9 +27,12 @@ describe('Canada voidTransaction', function () {
 
     service.submitTransaction(order, creditCard)
       .then(function (transaction) {
+
         var transId = transaction.transactionId;
         var options = {};
-        options.order_id = transaction._original.ReceiptId[0];
+        options.response = {
+          ReceiptId: [transaction._original.ReceiptId[0]]
+        };
         return service.voidTransaction(transId, options);
       })
       .then(function (response) {
@@ -46,7 +49,9 @@ describe('Canada voidTransaction', function () {
   it('should reject the promise when the gateway returns error for void', function (done) {
     var transId = '666';
     var options = {};
-    options.order_id = '777';
+    options.response = {
+      ReceiptId: ['777']
+    };
 
     service.voidTransaction(transId, options)
       .then(function (response) {
