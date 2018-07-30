@@ -1,10 +1,9 @@
-[![Build Status](https://travis-ci.org/continuous-software/42-cent-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-moneris)
+[![Build Status](https://travis-ci.org/continuous-software/42-cent-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-moneris) [![Greenkeeper badge](https://badges.greenkeeper.io/continuous-software/42-cent-moneris.svg)](https://greenkeeper.io/)
+
 
 ![node-moneris](https://seeklogo.com/images/M/moneris-logo-3813DF1697-seeklogo.com.png)
 
 ## Installation ##
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/continuous-software/42-cent-moneris.svg)](https://greenkeeper.io/)
 
     $ npm install -s 42-cent-moneris
 
