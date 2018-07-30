@@ -15,7 +15,7 @@ describe('Canada refundTransaction', function () {
   });
 
 
-  it('should refund a transaction', function (done) {
+  it('should refund a transaction', function () {
     var creditCard = new CreditCard()
       .withCreditCardNumber('5454545454545454')
       .withExpirationYear(2017)
@@ -37,16 +37,14 @@ describe('Canada refundTransaction', function () {
         return service.refundTransaction(transId, options);
       })
       .then(function (transaction) {
+        assert.ok(transaction._original, '_original should be defined');
         assert.equal(transaction._original.Message[0].slice(0,8), 'APPROVED');
-        assert.ok(result._original, '_original should be defined');
         assert.notEqual(transaction._original.ReceiptId, null);
-      }).catch(function (err) {
-        done();
-      });
+      })
 
   });
 
-  it('should reject the promise when the gateway returns error for refund', function (done) {
+  it('should reject the promise when the gateway returns error for refund', function () {
     var transId = '666';
     var options = {};
     options.response = {
@@ -61,7 +59,6 @@ describe('Canada refundTransaction', function () {
     }).catch(function (err) {
       assert.ok(err instanceof GatewayError, 'expected instance of GatewayError');
       assert.ok(err._original, '_original should be defined');
-      done();
     });
   });
 
