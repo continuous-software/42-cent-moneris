@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/continuous-software/42-cent-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-moneris) [![Greenkeeper badge](https://badges.greenkeeper.io/continuous-software/42-cent-moneris.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/continuous-software/42-cent-moneris.svg?branch=master)](https://travis-ci.org/continuous-software/42-cent-moneris) [![Greenkeeper badge](https://badges.greenkeeper.io/continuous-software/42-cent-moneris.svg)](https://greenkeeper.io/) [![GuardRails badge](https://badges.production.guardrails.io/continuous-software/42-cent-moneris.svg)](https://www.guardrails.io)
 
 
 ![node-moneris](https://seeklogo.com/images/M/moneris-logo-3813DF1697-seeklogo.com.png)
