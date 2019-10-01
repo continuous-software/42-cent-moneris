@@ -10,7 +10,7 @@
     "42-cent-base": "^1.0.0",
     "42-cent-util": "^1.0.0",
     "assign": "^0.1.7",
-    "bluebird": "^3.5.1",
+    "bluebird": "^3.5.5",
     "object-assign": "^4.0.1",
     "q": "^1.4.1",
     "request": "^2.88.0",
